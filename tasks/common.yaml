@@ -5,10 +5,10 @@
   tasks:
 
   - name: Install packages
+    state: latest
+    become: true
     apt:
-     name: "{{item}}"
-     state: latest
-     become: true
+     name: "{{ item }}"
      with_items:
       - curl
       - vim
