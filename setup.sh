@@ -12,4 +12,4 @@ sudo apt-cache policy ansible
 echo 'Ansible installed successfully'
 
 echo 'Starting installation scripts'
-ansible-playbook dev.yml --ask-become-pass -vvvv
+ansible-playbook dev.yaml --ask-become-pass -vvvv
