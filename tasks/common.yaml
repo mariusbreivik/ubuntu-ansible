@@ -8,8 +8,8 @@
     package:
       name: "{{ item }}"
       state: latest
-     become: true
-     with_items:
+    become: true
+    with_items:
       - curl
       - vim
       - apt-transport-https
