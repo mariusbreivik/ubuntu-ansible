@@ -1,18 +1,21 @@
 ---
-- name: Upgrade all packages
-  become: yes
-  become_user: root
-  apt: upgrade=dist
 
 - hosts: localhost
+
   tasks:
-    - name: Install packages
-      package:
-        name: "{{item}}"
-        state: latest
-      become: true
-      with_items:
-        - curl
-        - vim
-        - apt-transport-https
-        - ca-certificates
+
+  - name: Upgrade all packages
+    become: yes
+    become_user: root
+    apt: upgrade=dist
+
+  - name: Install packages
+     package:
+       name: "{{item}}"
+       state: latest
+       become: true
+       with_items:
+         - curl
+         - vim
+         - apt-transport-https
+         - ca-certificates
