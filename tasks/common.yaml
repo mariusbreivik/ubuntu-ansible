@@ -5,7 +5,7 @@
   tasks:
 
   - name: Install packages
-    package:
+    apt:
      name: "{{item}}"
      state: latest
      become: true
