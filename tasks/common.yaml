@@ -1,16 +1,18 @@
 ---
-- name: Update all packages to the latest version
+- name: Upgrade all packages
   become: yes
   become_user: root
   apt: upgrade=dist
 
-- name: install common utilities on Debian machines
-  apt: pkg={{ item }} state=present update_cache=yes
-  tags: install
-  become: yes
-  become_user: root
-  with_items:
-    - curl
-    - vim
-    - git
-    - tmux
+- hosts: localhost
+  tasks:
+    - name: Install packages
+      package:
+        name: "{{item}}"
+        state: latest
+      become: true
+      with_items:
+        - curl
+        - vim
+        - apt-transport-https
+        - ca-certificates
