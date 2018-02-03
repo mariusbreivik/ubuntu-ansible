@@ -12,11 +12,9 @@ sudo apt install software-properties-common ansible unzip -y
 WORKDIR=/tmp
 wget https://github.com/mariusbreivik/ubuntu-ansible/archive/master.zip -P $WORKDIR
 cd $WORKDIR
-unzip master.zip devsetup/
-cd devsetup
-
+unzip -o master.zip -d devsetup
 
 echo 'Ansible installed successfully'
 
 echo 'Starting installation scripts'
-ansible-playbook ubuntu.yaml
+ansible-playbook $WORKDIR/devsetup/ubuntu.yaml
