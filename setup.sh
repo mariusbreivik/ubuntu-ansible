@@ -7,4 +7,6 @@ sudo apt-add-repository ppa:ansible/ansible -y
 sudo update
 sudo install software-properties-common ansible -y
 
-echo 'Ansible installed'
+sudo apt-cache policy ansible
+
+echo 'Ansible installed successfully'
