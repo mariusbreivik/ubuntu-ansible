@@ -1,3 +1,4 @@
+---
 - name: Update all packages to the latest version
   become: yes
   become_user: root
