@@ -10,3 +10,6 @@ sudo apt install software-properties-common ansible -y
 sudo apt-cache policy ansible
 
 echo 'Ansible installed successfully'
+
+echo 'Starting installation scripts'
+ansible-playbook ubuntudesktop.yml --ask-become-pass -vvvv

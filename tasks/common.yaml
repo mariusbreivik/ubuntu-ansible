@@ -1,0 +1,13 @@
+- name: Update all packages to the latest version
+  sudo: yes
+  apt: upgrade=dist
+
+- name: install common utilities on Debian machines
+  apt: pkg={{ item }} state=present update_cache=yes
+  tags: install
+  sudo: yes
+  with_items:
+    - curl
+    - vim
+    - git
+    - tmux
