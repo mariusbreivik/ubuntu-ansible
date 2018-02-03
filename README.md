@@ -1,8 +1,10 @@
 # ubuntu-ansible
 
+Install common utils and personal dot files 
+
 ## Installation
 
-Run the following command
+Run one of the following commands
 
 ### With wget
 
