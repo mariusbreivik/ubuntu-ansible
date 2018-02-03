@@ -1,11 +1,13 @@
 - name: Update all packages to the latest version
-  sudo: yes
+  become: yes
+  become_user: root
   apt: upgrade=dist
 
 - name: install common utilities on Debian machines
   apt: pkg={{ item }} state=present update_cache=yes
   tags: install
-  sudo: yes
+  become: yes
+  become_user: root
   with_items:
     - curl
     - vim
