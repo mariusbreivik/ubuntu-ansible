@@ -17,4 +17,4 @@ unzip -o master.zip
 echo 'Ansible installed successfully'
 
 echo 'Starting installation scripts'
-ansible-playbook $WORKDIR/ubuntu-ansible-master/ubuntu.yaml
+ansible-playbook $WORKDIR/ubuntu-ansible-master/ubuntu.yaml --limit @$WORKDIR/ubuntu-ansible-master/ubuntu.retry
