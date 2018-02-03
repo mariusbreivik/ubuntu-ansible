@@ -4,11 +4,6 @@
 
   tasks:
 
-  - name: Upgrade all packages
-    become: yes
-    become_user: root
-    apt: upgrade=dist
-
   - name: Install packages
     package:
      name: "{{item}}"
@@ -19,3 +14,8 @@
       - vim
       - apt-transport-https
       - ca-certificates
+
+  - name: Upgrade all packages
+    become: yes
+    become_user: root
+    apt: upgrade=yes
