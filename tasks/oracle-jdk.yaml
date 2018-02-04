@@ -5,6 +5,7 @@
   tasks:
 
   - name: Add webup8team repo
+    become: yes
     apt_repository: 
      repo: 'ppa:webupd8team/java'
 
