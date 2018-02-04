@@ -5,11 +5,11 @@
   tasks:
 
   - name: Install packages
-    package:
-      name: "{{ item }}"
-      state: latest
     become: true
     become_user: root
+    apt:
+      name: "{{ item }}"
+      state: latest
     with_items:
       - curl
       - vim
@@ -19,4 +19,5 @@
   - name: Upgrade all packages
     become: yes
     become_user: root
-    apt: upgrade=yes
+    apt: 
+      upgrade: dist
