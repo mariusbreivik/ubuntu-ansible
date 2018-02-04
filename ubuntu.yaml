@@ -2,7 +2,7 @@
 
 - hosts: localhost
   
-- include: tasks/common.yaml
-- include: tasks/nodejs.yaml
-- include: tasks/oracle-jdk.yaml 
+- import_playbook: tasks/common.yaml
+- import_playbook: tasks/nodejs.yaml
+- import_playbook: tasks/oracle-jdk.yaml 
 

@@ -1,22 +1,27 @@
 ---
 
-- apt_repository: 
-    repo: 'ppa:webupd8team/java'
+- hosts: localhost
 
-- name: Accept Java License
-  become: yes
-  debconf: 
-    name: 'oracle-java8-installer' 
-    question: 'shared/accepted-oracle-license-v1-1' 
-    value: 'true' 
-    vtype: 'select'
+  tasks:
 
-- name: Install Oracle Java
-  become: yes
-  apt: 
-    name: "{{ item }}" 
-    state: latest
-  with_items:
-    - oracle-java8-installer
-    - ca-certificates
-    - oracle-java8-set-default
+  - name: Add webup8team repo
+    apt_repository: 
+     repo: 'ppa:webupd8team/java'
+
+  - name: Accept Java License
+    become: yes
+    debconf: 
+      name: 'oracle-java8-installer' 
+      question: 'shared/accepted-oracle-license-v1-1' 
+      value: 'true' 
+      vtype: 'select'
+
+  - name: Install Oracle Java
+    become: yes
+    apt: 
+      name: "{{ item }}" 
+      state: latest
+    with_items:
+      - oracle-java8-installer
+      - ca-certificates
+      - oracle-java8-set-default
