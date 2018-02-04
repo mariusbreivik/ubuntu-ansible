@@ -3,5 +3,6 @@
 - hosts: localhost
   
 - include: tasks/common.yaml
-- include: tasks/nodejs.yaml 
+- include: tasks/nodejs.yaml
+- include: tasks/oracle-jdk.yaml 
 
