@@ -1,8 +1,6 @@
 ---
 
-- name: Add Oracle Java Repository
-  become: yes
-  apt_repository: 
+- apt_repository: 
     repo: 'ppa:webupd8team/java'
 
 - name: Accept Java License
