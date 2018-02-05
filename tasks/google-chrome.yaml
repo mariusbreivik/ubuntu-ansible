@@ -5,9 +5,10 @@
   tasks:
 
   - name: Add key to Google Linux repository on dl.google.com.
+    become: yes
     apt_key:
-    url: https://dl-ssl.google.com/linux/linux_signing_key.pub
-    state: present
+     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
+     state: present
 
 
   
