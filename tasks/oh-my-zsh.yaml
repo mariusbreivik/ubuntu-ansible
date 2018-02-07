@@ -11,6 +11,7 @@
      state: present
 
   - name: Set zsh as default
+    become: yes
     user: 
-     user: $USER
+     name: $USER
      shell: /usr/bin/zsh
