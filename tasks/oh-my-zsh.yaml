@@ -1,0 +1,15 @@
+---
+
+- hosts: localhost
+
+  tasks:
+
+  - name: Install zsh
+    become: yes
+    apt:
+     name: zsh
+     state: present
+
+  - name: Set zsh as default
+    user: $user
+    shell: /bin/zsh
