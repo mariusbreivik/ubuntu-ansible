@@ -5,5 +5,5 @@
 - import_playbook: tasks/common.yaml
 - import_playbook: tasks/nodejs.yaml
 - import_playbook: tasks/oracle-jdk.yaml
-- import_playbook: tasks/google-chrome.yaml
-
+- import_playbook: tasks/google-chrome.
+- import_playbook: tasks/oh-my-zsh.yaml
