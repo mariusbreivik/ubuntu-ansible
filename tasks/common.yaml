@@ -16,6 +16,7 @@
       - vim
       - apt-transport-https
       - ca-certificates
+      - maven
 
   - name: Upgrade all packages
     become: yes
