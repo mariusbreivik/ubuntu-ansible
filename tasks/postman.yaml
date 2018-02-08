@@ -4,7 +4,12 @@
 
   tasks:
 
-  - name: Install postman
-    apt:
-     deb: https://dl.pstmn.io/download/latest/linux64
-     state: latest
+  - name: Download postman
+    get_url:
+     url: https://dl.pstmn.io/download/latest/linux64
+     dest: /tmp/postman.tar.gz
+
+  - name: Unpack postman
+    unarchive:
+      src: /tmp/postman.tar.gz
+      dest: /opt/postman
