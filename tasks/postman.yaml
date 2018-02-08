@@ -5,3 +5,6 @@
   tasks:
 
   - name: Install postman
+    apt:
+     deb: https://dl.pstmn.io/download/latest/linux64
+     state: latest
