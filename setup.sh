@@ -9,7 +9,16 @@ sudo apt install software-properties-common ansible unzip -y
 
 
 # need to clone the repo to get the rest of the files
-WORKDIR=/tmp
+WORKDIR=~/.personal_setup
+
+if [ ! -n "$WORKDIR"] ; then
+	WORKDIR=~/.personal_setup
+fi
+
+if [ -d "$WORKDIR" ]; then
+	rm -rf $WORKDIR
+fi
+
 wget https://github.com/mariusbreivik/ubuntu-ansible/archive/master.zip -P $WORKDIR
 cd $WORKDIR
 unzip -o master.zip
