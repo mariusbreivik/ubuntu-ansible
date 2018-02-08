@@ -9,6 +9,12 @@
      url: https://dl.pstmn.io/download/latest/linux64
      dest: /tmp/postman.tar.gz
 
+  - name Create Postman directory
+    file:
+     path: /opt/postman
+     state: directory
+     mode: 0755
+     
   - name: Unpack postman
     unarchive:
       src: /tmp/postman.tar.gz
