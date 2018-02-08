@@ -10,6 +10,7 @@
      dest: /tmp/postman.tar.gz
 
   - name: Create Postman directory
+    become: yes
     file:
      path: /opt/Postman
      state: directory
