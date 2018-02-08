@@ -11,11 +11,11 @@
 
   - name: Create Postman directory
     file:
-     path: /opt/postman
+     path: /opt/Postman
      state: directory
      mode: 0755
 
   - name: Unpack postman
     unarchive:
       src: /tmp/postman.tar.gz
-      dest: /opt/postman
+      dest: /opt/
