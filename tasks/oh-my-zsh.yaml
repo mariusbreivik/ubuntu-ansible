@@ -10,12 +10,11 @@
      name: zsh
      state: present
 
-  - name: Cloning  oh-my-zsh
-    git:
-     repo: https://github.com/robbyrussell/oh-my-zsh
-     dest: ~/.oh-my-zsh
+  - name: Fetch oh-my-zsh
+    get_url:
+     url: https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
+     dest: /tmp/install-oh-my-zsh.sh
+     mode: 0755
 
-  - name: Creating new ~/.zshrc
-    copy:
-     src: ~/.oh-my-zsh/templates/zshrc.zsh-template
-     dest: ~/.zshrc
+  - name: Install oh-my-zsh
+    command: zsh /tmp/install-oh-my-zsh.sh
