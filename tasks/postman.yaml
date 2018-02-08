@@ -17,6 +17,7 @@
      mode: 0755
 
   - name: Unpack postman
+    become: yes
     unarchive:
       src: /tmp/postman.tar.gz
       dest: /opt/
