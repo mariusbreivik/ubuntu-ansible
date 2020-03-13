@@ -4,8 +4,5 @@
   
 - import_playbook: tasks/common.yaml
 - import_playbook: tasks/nodejs.yaml
-- import_playbook: tasks/oracle-jdk.yaml
 - import_playbook: tasks/google-chrome.yaml
-- import_playbook: tasks/postman.yaml
-- import_playbook: tasks/sublime.yaml
 - import_playbook: tasks/oh-my-zsh.yaml

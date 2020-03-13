@@ -3,9 +3,7 @@
   tasks:
 
     - name: Node.js | Run the debian setup.
-      shell: "curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -"
-      become: yes
-      become_user: root
+      shell: "curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -"
       tags: nodejs
 
     - name: Node.js | Install nodejs and npm

@@ -11,9 +11,11 @@
       name: "{{ item }}"
       state: latest
     with_items:
+      - zsh
       - git
       - curl
       - vim
+      - fzf
       - apt-transport-https
       - ca-certificates
       - maven
