@@ -5,23 +5,25 @@
   tasks:
 
   - name: Install packages
-    become: true
+    become: yes
     become_user: root
     apt:
-      name: "{{ item }}"
-      state: latest
-    with_items:
+      name:
+      - tree
+      - htop
       - zsh
       - git
       - curl
       - vim
-      - fzf
       - apt-transport-https
       - ca-certificates
       - maven
 
-  - name: Upgrade all packages
-    become: yes
-    become_user: root
-    apt: 
-      upgrade: dist
+  - name: fetch fzf from github
+    git:
+      repo: 'https://github.com/junegunn/fzf.git'
+      dest: ~/.fzf
+      version: HEAD
+
+  - name: run fzf install script
+    script: ~/.fzf/install --all
