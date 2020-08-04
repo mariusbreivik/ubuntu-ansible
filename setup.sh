@@ -5,7 +5,7 @@
 echo 'Installing ansible'
 sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt update && sudo apt upgrade -y
-sudo apt install software-properties-common ansible unzip -y
+sudo apt install software-properties-common ansible unzip git vim -y
 
 
 # need to clone the repo to get the rest of the files
